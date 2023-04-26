@@ -1,0 +1,213 @@
+//CONTAINER
+import 'package:flutter/material.dart';
+void main() {
+  runApp(new MyApp1());
+}
+class MyApp1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Stateless Widget',
+      home: Scaffold(
+        body: Container(
+          color: Colors.pink,
+          child: Container(
+            //color: Colors.yellow,
+            //3rd
+            width: double.infinity,
+            height: 900.0,
+            //1st 2nd
+            padding: EdgeInsets.all(35),
+            margin: EdgeInsets.all(20),
+            //4rth
+            alignment: Alignment.bottomLeft,
+            transform: Matrix4.rotationZ(0),
+            //1st
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 4),
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                // 2nd
+                new BoxShadow(
+                  color: Colors.green,
+                  offset: new Offset(6.0, 6.0),
+                ),
+              ],
+            ),
+            child: Text(
+              "Child1",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 50,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+//STATELESS
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.amber),
+      home: Scaffold(
+        appBar: AppBar(
+          title: new Text('Chirag-My First App'),
+          backgroundColor: Color.fromARGB(255, 237, 6, 6),
+          leading: new Icon(Icons.menu),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.arrow_forward),
+              onPressed: () {
+                print('you pressed Arrow Button');
+              },
+            ),
+            new IconButton(
+                icon: new Icon(Icons.add),
+                onPressed: () {
+                  print('you pressed Addition Button');
+                }),
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () {
+                  print('you pressed Close Button');
+                }),
+          ],
+        ),
+        body: Container(
+          color: Color.fromARGB(255, 222, 143, 170),
+          child: Container(
+            //color: Colors.yellow,
+            //3rd
+            width: double.infinity,
+            height: 150.0,
+            //1st 2nd
+            padding: EdgeInsets.all(35),
+            margin: EdgeInsets.all(20),
+            //4rth
+            alignment: Alignment.bottomLeft,
+            transform: Matrix4.rotationZ(0),
+            //1st
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 4),
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                // 2nd
+                new BoxShadow(
+                  color: Colors.green,
+                  offset: new Offset(6.0, 6.0),
+                ),
+              ],
+            ),
+            child: Text(
+              "Chirag's Android",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//STATEFULL
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String text = "Click me";
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    text = "CLICK ME";
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.amber),
+      home: Scaffold(
+        appBar: AppBar(
+          title: new Text('Chirag-My First App'),
+          backgroundColor: Color.fromARGB(255, 237, 6, 6),
+          leading: new Icon(Icons.menu),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.arrow_forward),
+              onPressed: () {
+                setState(() {
+                  text = 'U have Clicked Arrow button';
+                  print('you pressed Arrow Button');
+                });
+              },
+            ),
+            new IconButton(
+                icon: new Icon(Icons.add),
+                onPressed: () {
+                  setState(() {
+                    text = "U have clicked Addition Button";
+                    print('you pressed Addition Button');
+                  });
+                }),
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () {
+                  setState(() {
+                    text = "you pressed Close Button";
+                    print('you pressed Close Button');
+                  });
+                }),
+          ],
+        ),
+        body: Container(
+          color: Color.fromARGB(255, 5, 40, 181),
+          child: Container(
+            //color: Colors.yellow,
+            //3rd
+            width: double.infinity,
+            height: 900.0,
+            //1st 2nd
+            padding: EdgeInsets.all(35),
+            margin: EdgeInsets.all(20),
+            //4rth
+            alignment: Alignment.bottomLeft,
+            transform: Matrix4.rotationZ(0),
+            //1st
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 9),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              text,
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
