@@ -1,0 +1,453 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.amber),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: new Text('Chirag-My First App'),
+          backgroundColor: Color.fromARGB(255, 237, 6, 6),
+          leading: new Icon(Icons.menu),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.arrow_forward),
+              onPressed: () {
+                print('you pressed Arrow Button');
+              },
+            ),
+            new IconButton(
+                icon: new Icon(Icons.add),
+                onPressed: () {
+                  print('you pressed Addition Button');
+                }),
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () {
+                  print('you pressed Close Button');
+                }),
+          ],
+        ),
+        
+        body: GridView.count(
+          crossAxisCount: 4,
+          children: List.generate(100, (index) {
+            return Padding(
+                padding: EdgeInsets.all(8),
+                child:
+                    Icon(Icons.holiday_village, size: 50, color: Colors.amber));
+          }),
+        ),
+      ),
+    );
+  }
+}
+
+//listview
+// import 'dart:html';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.amber),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          appBar: AppBar(
+            title: new Text('Chirag-My First App'),
+            backgroundColor: Color.fromARGB(255, 237, 6, 6),
+            leading: new Icon(Icons.menu),
+            actions: <Widget>[
+              new IconButton(
+                icon: new Icon(Icons.arrow_forward),
+                onPressed: () {
+                  print('you pressed Arrow Button');
+                },
+              ),
+              new IconButton(
+                  icon: new Icon(Icons.add),
+                  onPressed: () {
+                    print('you pressed Addition Button');
+                  }),
+              new IconButton(
+                  icon: new Icon(Icons.close),
+                  onPressed: () {
+                    print('you pressed Close Button');
+                  }),
+            ],
+          ),
+//         // body: Row(
+//         //   mainAxisAlignment: MainAxisAlignment.start,
+//         //   crossAxisAlignment: CrossAxisAlignment.center,
+//         //   children: [
+//         //     Container(
+//         //       child: const Text("Child 1"),
+//         //       height: 100,
+//         //       color: Colors.pinkAccent,
+//         //       padding: EdgeInsets.all(35),
+//         //       margin: EdgeInsets.all(10),
+//         //     ),
+//         //     Container(
+//         //       child: const Text('Child2'),
+//         //       height: 100,
+//         //       color: Colors.amber,
+//         //       padding: EdgeInsets.all((35)),
+//         //       margin: EdgeInsets.all(10),
+//         //     ),
+//         //     Container(
+//         //       child: const Text('Child3'),
+//         //       height: 100,
+//         //       color: Colors.blue,
+//         //       padding: EdgeInsets.all(35),
+//         //       margin: EdgeInsets.all(10),
+//         //     ),
+//         //     Expanded(
+//         //       child: Container(
+//         //         child: const Text('Child3'),
+//         //         height: 100,
+//         //         color: Colors.blue,
+//         //         padding: EdgeInsets.all(35),
+//         //         margin: EdgeInsets.all(10),
+//         //       ),
+//         //     )
+//         //   ],
+//         // )
+
+          body: ListView(
+            padding: const EdgeInsets.all(10),
+            children: const [
+              Card(
+                child: ListTile(
+                    title: Text('Title'),
+                    trailing: Icon(Icons.home_filled),
+                    subtitle: Text('My text 2'),
+                    tileColor: Colors.amber),
+              ),
+              Card(
+                child: ListTile(
+                  title: Text('Title2'),
+                  trailing: Icon(Icons.home_filled),
+                  subtitle: Text('My text 2'),
+                  tileColor: Colors.cyan,
+                ),
+              ),
+              Card(
+                child: ListTile(
+                    title: Text('Title3'),
+                    trailing: Icon(Icons.home_filled),
+                    subtitle: Text('My text 3'),
+                    tileColor: Colors.blue),
+              )
+            ],
+          )),
+    );
+  }
+}
+
+// class MyWidget extends StatefulWidget {
+//   const MyWidget({Key? key, required this.title}) : super(key: key);
+//   final String title;
+
+//   @override
+//   State<MyWidget> createState() => _MyWidgetState();
+// }
+
+// class _MyWidgetState extends State<MyWidget> {
+//   List<String> images = [
+//     'images/shinchan.jpg',
+//     'images/shinchan2.jpg',
+//     'images/shinchan3.png',
+//     'images/shinchan4.jpg',
+//     'images/shinchan5.jpg'
+//   ];
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(widget.title),
+//       ),
+//       body: ListView.builder(
+//           itemBuilder: (buildcontext, index) {
+//             return Card(
+//               child: ListTile(
+//                 title: const Text('Cartoon'),
+//                 subtitle: const Text('Shinchan'),
+//               ),
+//             );
+//           },
+//           itemCount: images.length,
+//           shrinkWrap: true,
+//           padding: const EdgeInsets.all(5),
+//           scrollDirection: Axis.vertical),
+//     );
+//   }
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     List<String> images = [
+//       'images/shinchan.jpg',
+//       'images/shinchan2.jpg',
+//       'images/shinchan3.png',
+//       'images/shinchan4.jpg',
+//       'images/shinchan5.jpg'
+//     ];
+//     List<String> names = [
+//       "shinchan",
+//       "shinchan",
+//       "shinchan",
+//       "shinchan",
+//       "shinchan",
+//       "pizza.jpg",
+//     ];
+//     return MaterialApp(
+//         title: 'My Favourite Cartoon Shinchan',
+//         theme: ThemeData(primarySwatch: Colors.blueGrey),
+//         debugShowCheckedModeBanner: false,
+//         home: Scaffold(
+//           appBar: AppBar(
+//               backgroundColor: Colors.blue,
+//               title: const Text("My Favourite Cartoon Shinchan")),
+//           body: ListView.builder(
+//             itemBuilder: (buildcontext, index) {
+//               return Card(
+//                 child: ListTile(
+//                   leading: CircleAvatar(
+//                     backgroundImage: AssetImage(images[index]),
+//                   ),
+//                   title: Text(names[index]),
+//                   subtitle: const Text("Price"),
+//                 ),
+//               );
+//             },
+//             itemCount: images.length,
+//             shrinkWrap: true,
+//             padding: const EdgeInsets.all(5),
+//             scrollDirection: Axis.vertical,
+//           ),
+//         ));
+//   }
+// }
+
+//images
+
+// import 'dart:html';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: "MyApp",
+//       theme: ThemeData(primarySwatch: Colors.amber),
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//           appBar: AppBar(
+//             title: new Text('Chirag-My First App'),
+//             backgroundColor: Color.fromARGB(255, 237, 6, 6),
+//             leading: new Icon(Icons.menu),
+//             actions: <Widget>[
+//               new IconButton(
+//                 icon: new Icon(Icons.arrow_forward),
+//                 onPressed: () {
+//                   print('you pressed Arrow Button');
+//                 },
+//               ),
+//               new IconButton(
+//                   icon: new Icon(Icons.add),
+//                   onPressed: () {
+//                     print('you pressed Addition Button');
+//                   }),
+//               new IconButton(
+//                   icon: new Icon(Icons.close),
+//                   onPressed: () {
+//                     print('you pressed Close Button');
+//                   }),
+//             ],
+//           ),
+//         // body: Row(
+//         //   mainAxisAlignment: MainAxisAlignment.start,
+//         //   crossAxisAlignment: CrossAxisAlignment.center,
+//         //   children: [
+//         //     Container(
+//         //       child: const Text("Child 1"),
+//         //       height: 100,
+//         //       color: Colors.pinkAccent,
+//         //       padding: EdgeInsets.all(35),
+//         //       margin: EdgeInsets.all(10),
+//         //     ),
+//         //     Container(
+//         //       child: const Text('Child2'),
+//         //       height: 100,
+//         //       color: Colors.amber,
+//         //       padding: EdgeInsets.all((35)),
+//         //       margin: EdgeInsets.all(10),
+//         //     ),
+//         //     Container(
+//         //       child: const Text('Child3'),
+//         //       height: 100,
+//         //       color: Colors.blue,
+//         //       padding: EdgeInsets.all(35),
+//         //       margin: EdgeInsets.all(10),
+//         //     ),
+//         //     Expanded(
+//         //       child: Container(
+//         //         child: const Text('Child3'),
+//         //         height: 100,
+//         //         color: Colors.blue,
+//         //         padding: EdgeInsets.all(35),
+//         //         margin: EdgeInsets.all(10),
+//         //       ),
+//         //     )
+//         //   ],
+//         // )
+
+// body: ListView(
+//   padding: const EdgeInsets.all(10),
+//   children: const [
+//     Card(
+//       child: ListTile(
+//           title: Text('Title'),
+//           trailing: Icon(Icons.home_filled),
+//           subtitle: Text('My text 2'),
+//           tileColor: Colors.amber),
+//     ),
+//     Card(
+//       child: ListTile(
+//         title: Text('Title2'),
+//         trailing: Icon(Icons.home_filled),
+//         subtitle: Text('My text 2'),
+//         tileColor: Colors.cyan,
+//       ),
+//     ),
+//     Card(
+//       child: ListTile(
+//           title: Text('Title3'),
+//           trailing: Icon(Icons.home_filled),
+//           subtitle: Text('My text 3'),
+//           tileColor: Colors.blue),
+//     )
+//   ],
+// )
+//           ),
+//     );
+//   }
+// }
+
+class MyWidget extends StatefulWidget {
+  const MyWidget({Key? key, required this.title}) : super(key: key);
+  final String title;
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  List<String> images = [
+    'images/shinchan.jpg',
+    'images/shinchan2.jpg',
+    'images/shinchan3.png',
+    'images/shinchan4.jpg',
+    'images/shinchan5.jpg'
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: ListView.builder(
+          itemBuilder: (buildcontext, index) {
+            return Card(
+              child: ListTile(
+                title: const Text('Cartoon'),
+                subtitle: const Text('Shinchan'),
+              ),
+            );
+          },
+          itemCount: images.length,
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(5),
+          scrollDirection: Axis.vertical),
+    );
+  }
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    List<String> images = [
+      'images/shinchan.jpg',
+      'images/shinchan2.jpg',
+      'images/shinchan3.png',
+      'images/shinchan4.jpg',
+      'images/shinchan5.jpg'
+    ];
+    List<String> names = [
+      "shinchan",
+      "shinchan",
+      "shinchan",
+      "shinchan",
+      "shinchan",
+      "pizza.jpg",
+    ];
+    return MaterialApp(
+        title: 'My Favourite Cartoon Shinchan',
+        theme: ThemeData(primarySwatch: Colors.blueGrey),
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+              backgroundColor: Colors.blue,
+              title: const Text("My Favourite Cartoon Shinchan")),
+          body: ListView.builder(
+            itemBuilder: (buildcontext, index) {
+              return Card(
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage(images[index]),
+                  ),
+                  title: Text(names[index]),
+                  subtitle: const Text("Price"),
+                ),
+              );
+            },
+            itemCount: images.length,
+            shrinkWrap: true,
+            padding: const EdgeInsets.all(5),
+            scrollDirection: Axis.vertical,
+          ),
+        ));
+  }
+}
